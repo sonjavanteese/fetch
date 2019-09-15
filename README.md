@@ -107,6 +107,29 @@ fetch('/users.json')
   })
 ```
 
+```
+fetch('https://nwp-cgn.de/api/hdb/')
+.then((response) => {
+	return response.text(); // or .json() or .blob() ...
+})
+.then((text) => {
+	// text is the response body
+})
+.catch((e) => {
+	// error in e.message
+});
+
+```
+
+```
+fetch('https://nwp-cgn.de/api/hdb/').then(function(response) {
+  console.log(response.headers.get('Content-Type'))
+  console.log(response.headers.get('Date'))
+  console.log(response.status)
+  console.log(response.statusText)
+})
+```
+
 ### Response metadata
 
 ```javascript
